@@ -1,0 +1,61 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3x3 puzzle */
+    gap: 5px;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-size: 300px 300px;
+    cursor: grab; /* Fare imlecini "tutma" simgesi yap */
+    border: 2px solid #ccc;
+    transition: transform 0.2s;
+    user-select: none; /* Metin seçimini engelle */
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.05);
+}
+
+.puzzle-piece:active {
+    cursor: grabbing; /* Fare imlecini "tutuyor" simgesi yap */
+    transform: scale(1.1); /* Parçayı biraz büyüt */
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #ff6f61;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
