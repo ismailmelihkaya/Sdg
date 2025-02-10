@@ -1,4 +1,3 @@
-/* Genel Stil */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -29,20 +28,20 @@ h1 {
 .puzzle-piece {
     width: 100px;
     height: 100px;
-    background-size: 300px 300px;
-    cursor: grab; /* Fare imlecini "tutma" simgesi yap */
+    background-size: 300px 300px; /* Resmin tam boyutu */
+    cursor: grab;
     border: 2px solid #ccc;
     transition: transform 0.2s;
     user-select: none; /* Metin seçimini engelle */
 }
 
-.puzzle-piece:hover {
-    transform: scale(1.05);
+.puzzle-piece:active {
+    cursor: grabbing;
+    transform: scale(1.1);
 }
 
-.puzzle-piece:active {
-    cursor: grabbing; /* Fare imlecini "tutuyor" simgesi yap */
-    transform: scale(1.1); /* Parçayı biraz büyüt */
+.puzzle-piece.hovered {
+    border: 2px solid #ff6f61; /* Kırmızı border */
 }
 
 #message {
