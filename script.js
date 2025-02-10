@@ -60,16 +60,17 @@ function dragStart(event) {
 // Sürüklenen parça üzerine gelindiğinde
 function dragOver(event) {
     event.preventDefault();
-    event.currentTarget.classList.add("hovered"); // Hedef parçayı vurgula
+    const targetPiece = event.currentTarget;
+    targetPiece.classList.add("hovered"); // Hedef parçayı vurgula
 }
 
 // Parça bırakıldığında
 function drop(event) {
     event.preventDefault();
-    const targetPiece = event.currentTarget;
+    const targetPiece = document.elementFromPoint(event.clientX, event.clientY);
 
     // Sürüklenen parça ile hedef parçanın yerini değiştir
-    if (targetPiece.classList.contains("puzzle-piece")) {
+    if (targetPiece && targetPiece.classList.contains("puzzle-piece")) {
         swapPieces(draggedPiece, targetPiece);
         if (isPuzzleSolved()) {
             showMessage();
